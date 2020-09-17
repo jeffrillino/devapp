@@ -45,3 +45,14 @@ push-docker-reg:
         repository: $DOCKER_REPOSITORY
         registry: https://index.docker.io/v2/
         cmd: npm run dev
+        
+push-ocir:
+  steps:
+    - internal/docker-push:
+      username: $OCI_USERNAME
+      password: $OCI_PASSWORD
+      tag: $OCI_TAG
+      # repository: $OCI_USERNAME/$OCI_REPOSITORY
+      repository: $OCI_REPOSITORY
+      registry: https://$OCI_REGION.ocir.io/v2/
+      cmd: npm run dev
