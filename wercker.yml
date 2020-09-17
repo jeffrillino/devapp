@@ -44,7 +44,8 @@ push-docker-reg:
         tag: $DOCKER_TAG
         repository: $DOCKER_REPOSITORY
         registry: https://index.docker.io/v2/
-        cmd: npm run dev
+        # cmd: npm run dev
+        cmd: node .
         
 push-ocir:
   steps:
@@ -55,4 +56,4 @@ push-ocir:
       # repository: $OCI_USERNAME/$OCI_REPOSITORY
       repository: $OCI_REPOSITORY
       registry: https://$OCI_REGION.ocir.io/v2/
-      cmd: npm run dev
+      cmd: node .
